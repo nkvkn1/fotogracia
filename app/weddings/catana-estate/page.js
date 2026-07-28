@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'How much does wedding photography at Catana Estate cost?',
-    a: 'Wedding photography at Catana Estate starts from $3,500, inclusive of a second photographer, a custom photography timeline, drone coverage where the venue and weather permit, and a curated preview gallery within 24 hours of your celebration.',
+    a: 'Wedding photography at Catana Estate starts from $4,999, inclusive of a second photographer, a custom photography timeline, drone coverage where the venue and weather permit, and a curated preview gallery within 48 hours of your celebration — within 24 hours for Collection III couples.',
   },
   {
     q: 'What does the Fotogracia planning process look like for a Catana Estate wedding?',
@@ -118,7 +118,7 @@ export default function CatanaEstatePage() {
               Fotogracia has documented celebrations at Catana Estate and understands how to move through the day there — when to step back and let moments unfold, and when to gently guide a couple toward the light or a setting that will serve the imagery well. That familiarity means the day feels calmer and the photography feels more natural.
             </p>
             <p>
-              Coverage at Catana Estate includes a pre-wedding planning consultation and custom photography timeline, a second photographer, drone coverage where conditions and venue policies allow, and a curated preview gallery within 24 hours of your wedding.
+              Coverage at Catana Estate includes a pre-wedding planning consultation and custom photography timeline, a second photographer, drone coverage where conditions and venue policies allow, and a curated preview gallery within 48 hours of your wedding — within 24 hours for Collection III couples.
             </p>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function CatanaEstatePage() {
               },
               {
                 title: 'Delivery',
-                body: 'A curated preview gallery within 24 hours, 300+ edited high-resolution images, and your complete private gallery delivered within 28 days.',
+                body: 'A curated preview gallery within 48 hours (24 hours with Collection III), 300+ edited high-resolution images, and your complete private gallery delivered within 4–6 weeks.',
               },
             ].map(({ title, body }) => (
               <div key={title}>
@@ -178,7 +178,7 @@ export default function CatanaEstatePage() {
           </div>
           <div className="border-t border-ink/10 mt-10 pt-8">
             <p className="text-sm text-ink-light">
-              Wedding photography at Catana Estate from <strong className="text-ink">$3,500</strong>, inclusive of a second photographer. Custom collections available upon enquiry.
+              Wedding photography at Catana Estate from <strong className="text-ink">$4,999</strong>, inclusive of a second photographer. Custom collections available upon enquiry.
             </p>
           </div>
         </div>

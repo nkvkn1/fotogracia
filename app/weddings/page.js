@@ -47,7 +47,7 @@ const experience = [
   {
     num: '04',
     title: 'Your Gallery',
-    body: 'A curated sneak peek arrives within 48 hours — sooner with Collection III. Your complete gallery and cinematic film are delivered within 4–6 weeks, beautifully edited and ready to revisit for a lifetime.',
+    body: 'A curated sneak peek arrives within 48 hours — within 24 hours with Collection III. Your complete gallery and cinematic film are delivered within 4–6 weeks, beautifully edited and ready to revisit for a lifetime.',
   },
 ];
 

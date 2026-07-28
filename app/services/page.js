@@ -154,7 +154,7 @@ export default function ServicesPage() {
               },
               {
                 q: 'When will we receive our images?',
-                a: 'A curated preview selection is delivered within 48 hours of your wedding. The complete gallery — fully edited and print-ready — is delivered within 28 days.',
+                a: 'A curated preview selection is delivered within 48 hours of your wedding — within 24 hours for Collection III couples. The complete gallery — fully edited and print-ready — is delivered within 4–6 weeks.',
               },
               {
                 q: 'What does the experience feel like on the day?',

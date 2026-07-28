@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: 'How much does wedding photography at Graydon Hall Manor cost?',
-    a: 'Wedding photography at Graydon Hall Manor starts from $3,500, inclusive of a second photographer, venue preparation, drone coverage where permitted, and a curated 24-hour preview gallery. Full-day packages and custom collections are available upon enquiry.',
+    a: 'Wedding photography at Graydon Hall Manor starts from $4,999, inclusive of a second photographer, venue preparation, drone coverage where permitted, and a curated 48-hour preview gallery — delivered within 24 hours for Collection III couples. Full-day packages and custom collections are available upon enquiry.',
   },
   {
     q: 'Is Fotogracia familiar with a Graydon Hall Manor wedding day?',
@@ -118,7 +118,7 @@ export default function GraydonHallManorPage() {
               Fotogracia has documented celebrations at Graydon Hall Manor and understands the rhythm of a wedding day there — the portrait locations, the movement of light across the gardens, and how to work within the manor&apos;s character rather than against it. That familiarity translates into calmer, more intentional coverage for you.
             </p>
             <p>
-              Every Fotogracia wedding at Graydon Hall includes a pre-wedding venue walkthrough and a custom photography timeline, a second photographer, drone coverage where the venue and weather permit, and a curated preview gallery delivered within 24 hours of your celebration.
+              Every Fotogracia wedding at Graydon Hall includes a pre-wedding venue walkthrough and a custom photography timeline, a second photographer, drone coverage where the venue and weather permit, and a curated preview gallery delivered within 48 hours of your celebration — within 24 hours for Collection III couples.
             </p>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function GraydonHallManorPage() {
               },
               {
                 title: 'Delivery',
-                body: 'A curated preview gallery within 24 hours, 300+ edited high-resolution images, and your complete private gallery delivered within 28 days.',
+                body: 'A curated preview gallery within 48 hours (24 hours with Collection III), 300+ edited high-resolution images, and your complete private gallery delivered within 4–6 weeks.',
               },
             ].map(({ title, body }) => (
               <div key={title}>
@@ -178,7 +178,7 @@ export default function GraydonHallManorPage() {
           </div>
           <div className="border-t border-ink/10 mt-10 pt-8">
             <p className="text-sm text-ink-light">
-              Wedding photography at Graydon Hall Manor from <strong className="text-ink">$3,500</strong>, inclusive of a second photographer. Custom collections available upon enquiry.
+              Wedding photography at Graydon Hall Manor from <strong className="text-ink">$4,999</strong>, inclusive of a second photographer. Custom collections available upon enquiry.
             </p>
           </div>
         </div>

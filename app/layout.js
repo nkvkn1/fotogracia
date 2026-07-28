@@ -1,6 +1,23 @@
 import './globals.css';
+import { Cormorant_Garamond, Inter } from 'next/font/google';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+  fallback: ['Georgia', 'serif'],
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
+});
 
 export const metadata = {
   title: {
@@ -92,7 +109,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
         <script
           type="application/ld+json"

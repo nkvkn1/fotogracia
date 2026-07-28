@@ -56,7 +56,7 @@ export default function AboutPage() {
                 { label: 'Based in', value: 'Toronto, ON' },
                 { label: 'Available for', value: 'Travel & Destination' },
                 { label: 'Specialties', value: 'Luxury Weddings, Executive Portraits' },
-                { label: 'Gallery delivery', value: 'Preview within 48 hrs · full gallery within 28 days' },
+                { label: 'Gallery delivery', value: 'Preview within 48 hrs · full gallery within 4–6 weeks' },
               ].map(({ label, value }) => (
                 <div key={label}>
                   <p className="label text-muted mb-1">{label}</p>
