@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import Link from 'next/link';
 
 export const metadata = {
@@ -17,12 +17,12 @@ export const metadata = {
 };
 
 const portraitImages = [
-  { src: '/images/portraits/p-01.jpg', alt: "Men's portrait photographer Toronto — executive session by Fotogracia" },
-  { src: '/images/portraits/p-04.jpg', alt: "Luxury men's portrait photography Toronto — dark editorial style" },
-  { src: '/images/portraits/p-07.jpg', alt: "Personal branding photographer Toronto — professional male portrait" },
-  { src: '/images/portraits/p-10.jpg', alt: "Executive portrait photographer Toronto — cinematic business photo" },
-  { src: '/images/portraits/p-12.jpg', alt: "Toronto personal branding photography men — founder portrait by Fotogracia" },
-  { src: '/images/portraits/p-14.jpg', alt: "Luxury headshot photographer Toronto — editorial men's portrait" },
+  { id: 'portraits/p-01', alt: "Men's portrait photographer Toronto — executive session by Fotogracia" },
+  { id: 'portraits/p-04', alt: "Luxury men's portrait photography Toronto — dark editorial style" },
+  { id: 'portraits/p-07', alt: "Personal branding photographer Toronto — professional male portrait" },
+  { id: 'portraits/p-10', alt: "Executive portrait photographer Toronto — cinematic business photo" },
+  { id: 'portraits/p-12', alt: "Toronto personal branding photography men — founder portrait by Fotogracia" },
+  { id: 'portraits/p-14', alt: "Luxury headshot photographer Toronto — editorial men's portrait" },
 ];
 
 export default function MensPortraitPage() {
@@ -38,11 +38,10 @@ export default function MensPortraitPage() {
 
       {/* ── HERO IMAGE ───────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
-        <Image
-          src="/images/portraits/p-05.jpg"
+        <ProcessedImage
+          id="portraits/p-05"
+          size="large"
           alt="Men's portrait photographer Toronto — luxury executive personal branding by Fotogracia"
-          width={0}
-          height={0}
           sizes="100vw"
           className="w-full h-auto"
           priority
@@ -127,13 +126,12 @@ export default function MensPortraitPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
         <p className="label text-muted mb-10">Selected portraits</p>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
-          {portraitImages.map(({ src, alt }) => (
-            <div key={src} className="break-inside-avoid mb-4 md:mb-6">
-              <Image
-                src={src}
+          {portraitImages.map(({ id, alt }) => (
+            <div key={id} className="break-inside-avoid mb-4 md:mb-6">
+              <ProcessedImage
+                id={id}
+                size="small"
                 alt={alt}
-                width={0}
-                height={0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-auto"
               />

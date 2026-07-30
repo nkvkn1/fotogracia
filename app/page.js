@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import Link from 'next/link';
 
 export const metadata = {
@@ -16,8 +16,9 @@ export default function Home() {
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col">
         <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/images/weddings/doreen-david-101.jpg"
+          <ProcessedImage
+            id="weddings/doreen-david-101"
+            size="large"
             alt="Editorial wedding photography Toronto — elegant couple portrait by Fotogracia"
             fill
             className="object-cover"
@@ -84,30 +85,29 @@ export default function Home() {
               title: 'Weddings & Engagements',
               desc: 'Full-day editorial coverage for couples who value thoughtful imagery, natural moments, and a calm, composed experience from start to finish.',
               href: '/weddings',
-              src: '/images/weddings/ryan-alyssa-46.jpg',
+              id: 'weddings/ryan-alyssa-46',
               alt: 'Editorial wedding photographer Toronto — elegant couple portrait by Fotogracia',
             },
             {
               title: 'Portrait Sessions',
               desc: 'Executive portrait and personal branding photography for founders, professionals, and individuals. Deliberate, intentional imagery built to represent you well.',
               href: '/mens-portrait',
-              src: '/images/portraits/p-05.jpg',
+              id: 'portraits/p-05',
               alt: "Portrait photographer Toronto — personal branding session by Fotogracia",
             },
             {
               title: 'Content Creation',
               desc: 'Refined photo and video for brands and creators who value elevated, intentional visual content over generic stock-style imagery.',
               href: '/services#content',
-              src: '/images/content/content-poster.jpg',
+              id: 'content/reel-1-poster',
               alt: 'Brand content creation Toronto — editorial photography and video by Fotogracia',
             },
-          ].map(({ title, desc, href, src, alt }) => (
+          ].map(({ title, desc, href, id, alt }) => (
             <Link key={title} href={href} className="group block">
-              <Image
-                src={src}
+              <ProcessedImage
+                id={id}
+                size="small"
                 alt={alt}
-                width={0}
-                height={0}
                 sizes="(max-width: 768px) 100vw, 33vw"
                 className="w-full h-auto"
               />
@@ -136,19 +136,18 @@ export default function Home() {
 
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
           {[
-            { src: '/images/weddings/ryan-alyssa-12.jpg',  alt: 'Editorial wedding photography Toronto — Ryan and Alyssa by Fotogracia' },
-            { src: '/images/portraits/p-09.jpg', alt: 'Portrait session Toronto — personal branding photography by Fotogracia' },
-            { src: '/images/weddings/doreen-david-30.jpg',  alt: 'Toronto wedding photographer — Doreen and David by Fotogracia' },
-            { src: '/images/weddings/ryan-alyssa-51.jpg',  alt: 'GTA wedding photographer — editorial wedding photography by Fotogracia' },
-            { src: '/images/portraits/p-02.jpg', alt: 'Executive portrait photographer Toronto — personal branding by Fotogracia' },
-            { src: '/images/weddings/doreen-david-74.jpg',  alt: 'Elegant wedding photography Toronto GTA — editorial portrait by Fotogracia' },
-          ].map(({ src, alt }) => (
-            <div key={src} className="break-inside-avoid mb-4 md:mb-6">
-              <Image
-                src={src}
+            { id: 'weddings/ryan-alyssa-12',  alt: 'Editorial wedding photography Toronto — Ryan and Alyssa by Fotogracia' },
+            { id: 'portraits/p-09', alt: 'Portrait session Toronto — personal branding photography by Fotogracia' },
+            { id: 'weddings/doreen-david-30',  alt: 'Toronto wedding photographer — Doreen and David by Fotogracia' },
+            { id: 'weddings/ryan-alyssa-51',  alt: 'GTA wedding photographer — editorial wedding photography by Fotogracia' },
+            { id: 'portraits/p-02', alt: 'Executive portrait photographer Toronto — personal branding by Fotogracia' },
+            { id: 'weddings/doreen-david-74',  alt: 'Elegant wedding photography Toronto GTA — editorial portrait by Fotogracia' },
+          ].map(({ id, alt }) => (
+            <div key={id} className="break-inside-avoid mb-4 md:mb-6">
+              <ProcessedImage
+                id={id}
+                size="small"
                 alt={alt}
-                width={0}
-                height={0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-auto"
               />

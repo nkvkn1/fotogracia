@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import Link from 'next/link';
 
 export const metadata = {
@@ -39,12 +39,12 @@ const jsonLd = {
 };
 
 const galleryImages = [
-  { src: '/images/weddings/doreen-david-24.jpg', alt: 'Wedding photography at Catana Estate Toronto — Fotogracia' },
-  { src: '/images/weddings/ryan-alyssa-37.jpg', alt: 'Elegant estate wedding photography at Catana Estate' },
-  { src: '/images/weddings/doreen-david-83.jpg', alt: 'Couple portrait at Catana Estate — editorial wedding photographer' },
-  { src: '/images/weddings/ryan-alyssa-60.jpg', alt: 'Natural light wedding moment at Catana Estate by Fotogracia' },
-  { src: '/images/weddings/doreen-david-98.jpg', alt: 'Wedding reception at Catana Estate Toronto' },
-  { src: '/images/weddings/doreen-david-60.jpg', alt: 'Refined estate wedding photography — Catana Estate Toronto' },
+  { id: 'weddings/doreen-david-24', alt: 'Wedding photography at Catana Estate Toronto — Fotogracia' },
+  { id: 'weddings/ryan-alyssa-37', alt: 'Elegant estate wedding photography at Catana Estate' },
+  { id: 'weddings/doreen-david-83', alt: 'Couple portrait at Catana Estate — editorial wedding photographer' },
+  { id: 'weddings/ryan-alyssa-60', alt: 'Natural light wedding moment at Catana Estate by Fotogracia' },
+  { id: 'weddings/doreen-david-98', alt: 'Wedding reception at Catana Estate Toronto' },
+  { id: 'weddings/doreen-david-60', alt: 'Refined estate wedding photography — Catana Estate Toronto' },
 ];
 
 const faqs = [
@@ -84,11 +84,10 @@ export default function CatanaEstatePage() {
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
-        <Image
-          src="/images/weddings/doreen-david-24.jpg"
+        <ProcessedImage
+          id="weddings/doreen-david-24"
+          size="large"
           alt="Wedding photography at Catana Estate Toronto — Fotogracia"
-          width={0}
-          height={0}
           sizes="100vw"
           className="w-full h-auto"
           priority
@@ -128,13 +127,12 @@ export default function CatanaEstatePage() {
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
         <p className="label text-muted mb-10">Recent work at Catana Estate</p>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
-          {galleryImages.map(({ src, alt }) => (
-            <div key={src} className="break-inside-avoid mb-4 md:mb-6">
-              <Image
-                src={src}
+          {galleryImages.map(({ id, alt }) => (
+            <div key={id} className="break-inside-avoid mb-4 md:mb-6">
+              <ProcessedImage
+                id={id}
+                size="small"
                 alt={alt}
-                width={0}
-                height={0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-auto"
               />

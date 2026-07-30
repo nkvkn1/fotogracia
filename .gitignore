@@ -1,6 +1,11 @@
 # Internal — not for the client repo
 AUDIT.md
 
+# Original photographs (masters). Source of truth for `npm run publish-images`,
+# but 20–50MB each — kept out of git deliberately. Back these up separately.
+# The generated derivatives in public/images/processed/ ARE committed.
+assets/originals/
+
 # Dependencies
 node_modules/
 .pnp

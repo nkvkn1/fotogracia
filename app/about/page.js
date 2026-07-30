@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import Link from 'next/link';
 
 export const metadata = {
@@ -22,11 +22,10 @@ export default function AboutPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
           {/* Photographer portrait */}
-          <Image
-            src="/images/nishank/nk-01.jpg"
+          <ProcessedImage
+            id="nishank/nk-01"
+            size="medium"
             alt="Nishank Kumar — photographer"
-            width={0}
-            height={0}
             sizes="(max-width: 768px) 100vw, 50vw"
             className="w-full h-auto"
           />

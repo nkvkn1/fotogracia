@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import Link from 'next/link';
 
 export const metadata = {
@@ -28,7 +28,7 @@ const services = [
       'High-resolution online gallery with print release',
     ],
     note: 'Collections from $4,999 — inclusive of photography and film. To preserve a personalised experience, only a limited number of weddings are accepted each season.',
-    src: '/images/weddings/doreen-david-101.jpg',
+    id: 'weddings/doreen-david-101',
   },
   {
     id: 'portraits',
@@ -46,7 +46,7 @@ const services = [
       'Extended sessions, video content, and high-end retouching available',
     ],
     note: 'Outdoor sessions from $800. Studio sessions from $1,200. Reach out to discuss your needs.',
-    src: '/images/portraits/p-05.jpg',
+    id: 'portraits/p-05',
   },
   {
     id: 'content',
@@ -63,7 +63,7 @@ const services = [
       'Priority and retainer arrangements available',
     ],
     note: 'Retainer packages available for brands requiring consistent elevated content.',
-    src: '/images/content/content-poster.jpg',
+    id: 'content/reel-1-poster',
   },
 ];
 
@@ -84,11 +84,10 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16">
                 {/* Service image */}
                 <div className="md:col-span-5 order-2 md:order-1">
-                  <Image
-                    src={svc.src}
+                  <ProcessedImage
+                    id={svc.id}
+                    size="medium"
                     alt={svc.title}
-                    width={0}
-                    height={0}
                     sizes="(max-width: 768px) 100vw, 42vw"
                     className="w-full h-auto"
                   />

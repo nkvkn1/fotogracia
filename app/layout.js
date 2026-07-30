@@ -2,6 +2,7 @@ import './globals.css';
 import { Cormorant_Garamond, Inter } from 'next/font/google';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import { getImageSource } from '@/lib/images';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -84,7 +85,7 @@ const jsonLd = {
         'Toronto-based editorial wedding photographer documenting elegant celebrations across the GTA. Refined, intentional imagery for couples and professionals.',
       url: 'https://fotogracia.com',
       email: 'info@fotogracia.com',
-      image: 'https://fotogracia.com/images/hero.jpg',
+      image: `https://fotogracia.com${getImageSource('misc/hero', 'large').src}`,
       priceRange: '$$$',
       address: {
         '@type': 'PostalAddress',

@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import Link from 'next/link';
 
 export const metadata = {
@@ -17,15 +17,15 @@ export const metadata = {
 };
 
 const weddingImages = [
-  { src: '/images/weddings/ryan-alyssa-27.jpg', alt: 'Wedding couple portrait — editorial wedding photography Toronto by Fotogracia' },
-  { src: '/images/weddings/doreen-david-37.jpg', alt: 'Bride and groom at Graydon Hall Manor — Fotogracia' },
-  { src: '/images/weddings/ryan-alyssa-13.jpg', alt: 'Wedding ceremony moment — Toronto editorial wedding photographer' },
-  { src: '/images/weddings/doreen-david-50.jpg', alt: 'Elegant wedding reception — refined wedding photography Toronto' },
-  { src: '/images/weddings/ryan-alyssa-45.jpg', alt: 'Couple portrait golden hour — GTA wedding photographer' },
-  { src: '/images/weddings/doreen-david-75.jpg', alt: 'Wedding detail shot — editorial wedding photography by Fotogracia' },
-  { src: '/images/weddings/ryan-alyssa-51.jpg', alt: 'Natural wedding moment — Toronto wedding photographer' },
-  { src: '/images/weddings/doreen-david-98.jpg', alt: 'Wedding celebration — Catana Estate editorial photographer' },
-  { src: '/images/weddings/doreen-david-60.jpg', alt: 'Refined wedding portrait — GTA editorial wedding photography' },
+  { id: 'weddings/ryan-alyssa-27', alt: 'Wedding couple portrait — editorial wedding photography Toronto by Fotogracia' },
+  { id: 'weddings/doreen-david-37', alt: 'Bride and groom at Graydon Hall Manor — Fotogracia' },
+  { id: 'weddings/ryan-alyssa-13', alt: 'Wedding ceremony moment — Toronto editorial wedding photographer' },
+  { id: 'weddings/doreen-david-50', alt: 'Elegant wedding reception — refined wedding photography Toronto' },
+  { id: 'weddings/ryan-alyssa-45', alt: 'Couple portrait golden hour — GTA wedding photographer' },
+  { id: 'weddings/doreen-david-75', alt: 'Wedding detail shot — editorial wedding photography by Fotogracia' },
+  { id: 'weddings/ryan-alyssa-51', alt: 'Natural wedding moment — Toronto wedding photographer' },
+  { id: 'weddings/doreen-david-98', alt: 'Wedding celebration — Catana Estate editorial photographer' },
+  { id: 'weddings/doreen-david-60', alt: 'Refined wedding portrait — GTA editorial wedding photography' },
 ];
 
 const experience = [
@@ -64,11 +64,10 @@ export default function WeddingsPage() {
 
       {/* ── HERO IMAGE ───────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
-        <Image
-          src="/images/weddings/ryan-alyssa-27.jpg"
+        <ProcessedImage
+          id="weddings/ryan-alyssa-27"
+          size="large"
           alt="Editorial wedding photographer Toronto — elegant couple portrait by Fotogracia"
-          width={0}
-          height={0}
           sizes="100vw"
           className="w-full h-auto"
           priority
@@ -338,7 +337,7 @@ export default function WeddingsPage() {
               location: 'North York, Toronto',
               desc: 'A stately English manor house set against formal gardens and ravine greenspace — one of Toronto\'s most photographically rewarding wedding settings.',
               href: '/weddings/graydon-hall-manor',
-              src: '/images/weddings/ryan-alyssa-27.jpg',
+              id: 'weddings/ryan-alyssa-27',
               alt: 'Graydon Hall Manor wedding photography — Fotogracia Toronto',
             },
             {
@@ -346,17 +345,16 @@ export default function WeddingsPage() {
               location: 'Toronto & GTA',
               desc: 'An elegant estate setting that balances refined architecture with natural surroundings — beautifully suited to an editorial, unhurried approach.',
               href: '/weddings/catana-estate',
-              src: '/images/weddings/doreen-david-24.jpg',
+              id: 'weddings/doreen-david-24',
               alt: 'Catana Estate wedding photography — Fotogracia Toronto',
             },
-          ].map(({ venue, location, desc, href, src, alt }) => (
+          ].map(({ venue, location, desc, href, id, alt }) => (
             <Link key={venue} href={href} className="group block">
               <div className="overflow-hidden mb-5">
-                <Image
-                  src={src}
+                <ProcessedImage
+                  id={id}
+                  size="medium"
                   alt={alt}
-                  width={0}
-                  height={0}
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="w-full h-auto group-hover:opacity-90 transition-opacity"
                 />
@@ -380,13 +378,12 @@ export default function WeddingsPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
         <p className="label text-muted mb-10">Selected weddings</p>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
-          {weddingImages.map(({ src, alt }) => (
-            <div key={src} className="break-inside-avoid mb-4 md:mb-6">
-              <Image
-                src={src}
+          {weddingImages.map(({ id, alt }) => (
+            <div key={id} className="break-inside-avoid mb-4 md:mb-6">
+              <ProcessedImage
+                id={id}
+                size="small"
                 alt={alt}
-                width={0}
-                height={0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-auto"
               />

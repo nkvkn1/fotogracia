@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import { useState, useEffect, useMemo } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
@@ -273,11 +273,10 @@ export default function ContactClient() {
 
           {/* Right: contact info + image */}
           <div>
-            <Image
-              src="/images/weddings/w-27.jpg"
+            <ProcessedImage
+              id="misc/w-27"
+              size="medium"
               alt="Contact"
-              width={0}
-              height={0}
               sizes="(max-width: 768px) 100vw, 50vw"
               className="w-full h-auto mb-10"
             />

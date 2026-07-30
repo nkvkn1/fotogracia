@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import ProcessedImage from '@/components/ProcessedImage';
 import Link from 'next/link';
 
 export const metadata = {
@@ -39,12 +39,12 @@ const jsonLd = {
 };
 
 const galleryImages = [
-  { src: '/images/weddings/ryan-alyssa-27.jpg', alt: 'Wedding couple portrait at Graydon Hall Manor — Fotogracia Toronto' },
-  { src: '/images/weddings/doreen-david-37.jpg', alt: 'Elegant wedding ceremony at Graydon Hall Manor Toronto' },
-  { src: '/images/weddings/ryan-alyssa-45.jpg', alt: 'Golden hour portrait — Graydon Hall Manor wedding photography' },
-  { src: '/images/weddings/doreen-david-75.jpg', alt: 'Wedding reception at Graydon Hall Manor — editorial photography' },
-  { src: '/images/weddings/ryan-alyssa-51.jpg', alt: 'Couple portrait at Graydon Hall Manor by Fotogracia' },
-  { src: '/images/weddings/doreen-david-50.jpg', alt: 'Refined wedding moment at Graydon Hall Manor, Toronto' },
+  { id: 'weddings/ryan-alyssa-27', alt: 'Wedding couple portrait at Graydon Hall Manor — Fotogracia Toronto' },
+  { id: 'weddings/doreen-david-37', alt: 'Elegant wedding ceremony at Graydon Hall Manor Toronto' },
+  { id: 'weddings/ryan-alyssa-45', alt: 'Golden hour portrait — Graydon Hall Manor wedding photography' },
+  { id: 'weddings/doreen-david-75', alt: 'Wedding reception at Graydon Hall Manor — editorial photography' },
+  { id: 'weddings/ryan-alyssa-51', alt: 'Couple portrait at Graydon Hall Manor by Fotogracia' },
+  { id: 'weddings/doreen-david-50', alt: 'Refined wedding moment at Graydon Hall Manor, Toronto' },
 ];
 
 const faqs = [
@@ -84,11 +84,10 @@ export default function GraydonHallManorPage() {
 
       {/* ── HERO ─────────────────────────────────────────── */}
       <div className="max-w-7xl mx-auto px-6 md:px-10 pb-16">
-        <Image
-          src="/images/weddings/ryan-alyssa-27.jpg"
+        <ProcessedImage
+          id="weddings/ryan-alyssa-27"
+          size="large"
           alt="Wedding photography at Graydon Hall Manor Toronto — Fotogracia"
-          width={0}
-          height={0}
           sizes="100vw"
           className="w-full h-auto"
           priority
@@ -128,13 +127,12 @@ export default function GraydonHallManorPage() {
       <section className="max-w-7xl mx-auto px-6 md:px-10 pb-24 md:pb-32">
         <p className="label text-muted mb-10">Recent work at Graydon Hall Manor</p>
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6">
-          {galleryImages.map(({ src, alt }) => (
-            <div key={src} className="break-inside-avoid mb-4 md:mb-6">
-              <Image
-                src={src}
+          {galleryImages.map(({ id, alt }) => (
+            <div key={id} className="break-inside-avoid mb-4 md:mb-6">
+              <ProcessedImage
+                id={id}
+                size="small"
                 alt={alt}
-                width={0}
-                height={0}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="w-full h-auto"
               />
